@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar class="ttlheader">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Generate Fake User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <ion-item>
+      <ion-label class="sName" position="floating">Job Name...</ion-label>
+      <ion-input placeholder="Cleaners..." [(ngModel)]="serviceName"></ion-input>
+    </ion-item>
+    <div id="container-grid">
+      <ion-label>Generate data for...</ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.gender"></ion-checkbox>
+              <ion-label>Gender</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.name"></ion-checkbox>
+              <ion-label>Name</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.email"></ion-checkbox>
+              <ion-label>Email</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.username"></ion-checkbox>
+              <ion-label>Username</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.password"></ion-checkbox>
+              <ion-label>Password</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.dob"></ion-checkbox>
+              <ion-label>Date of Birth</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.phone"></ion-checkbox>
+              <ion-label>Phone</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.cell"></ion-checkbox>
+              <ion-label>Cell</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.picture"></ion-checkbox>
+              <ion-label>Image</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" [(ngModel)]="filterData.address"></ion-checkbox>
+              <ion-label>Address</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-button size="large" (click)="handleGenerate()">GENERATE</ion-button>
+  </div>
+</ion-content>

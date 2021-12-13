@@ -1,0 +1,37 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+#container-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#container ion-img {
+  height: 100px;
+  width: 100px;
+  margin: 20px 20px 10px 20px;
+}
+
+#container-header ion-note {
+  margin: 10px;
+}
+
+ion-button {
+  margin: 1em;
+  --border-radius: 100em;
+  --background: crimson;
+}
+
+#container ion-img::part(image) {
+  border-radius: 100px;
+}
+
+.ttlheader {
+  --background: darkred;
+  color: white;
+  font-weight: bold;
+}

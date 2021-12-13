@@ -1,0 +1,30 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  height: 100%;
+}
+
+#container #container-grid {
+  flex-grow: 1;
+  margin-top: 2em;
+}
+
+#container #container-grid ion-item {
+  --border-radius: 100em;
+  --border-radius: 10px;
+  --border-width: 2px;
+  --border-color: darkred;
+}
+
+ion-button {
+  margin: 1em;
+  --border-radius: 100em;
+  --background: crimson;
+}
+
+.ttlheader {
+  --background: darkred;
+  color: white;
+  font-weight: bold;
+}

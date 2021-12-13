@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar class="ttlheader">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{appManager.selService.serviceName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <div id="container-header">
+      <ion-img src="{{appManager.selService.picture ? appManager.selService.picture : logoImage}}"></ion-img>
+      <ion-button disabled="{{appManager.selService.picture === undefined}}"
+        (click)="handleBrowser(appManager.selService.picture)">
+        OPEN IN BROWSER
+      </ion-button>
+      <ion-note>Click on information to copy!</ion-note>
+    </div>
+
+    <ion-list>
+      <ion-item button (click)="handleCopy(appManager.selService.gender)" *ngIf="appManager.selService.gender">
+        <ion-label position="fixed">Gender</ion-label>
+        <ion-input value="{{appManager.selService.gender}}" readonly></ion-input>
+      </ion-item>
+      <ion-item button (click)="handleCopy(appManager.selService.name)" *ngIf="appManager.selService.name">
+        <ion-label position="fixed">Name</ion-label>
+        <ion-input value="{{appManager.selService.name}}" readonly></ion-input>
+      </ion-item>
+      <ion-item button (click)="handleCopy(appManager.selService.email)" *ngIf="appManager.selService.email">
+        <ion-label position="fixed">Email</ion-label>
+        <ion-input value="{{appManager.selService.email}}" readonly></ion-input>
+      </ion-item>
+      <ion-item button (click)="handleCopy(appManager.selService.username)" *ngIf="appManager.selService.username">
+        <ion-label position="fixed">Username</ion-label>
+        <ion-input value="{{appManager.selService.username}}" readonly></ion-input>
+      </ion-item>
+      <ion-item button (click)="handleCopy(appManager.selService.password)" *ngIf="appManager.selService.password">
+        <ion-label position="fixed">Password</ion-label>
+        <ion-input value="{{appManager.selService.password}}" readonly></ion-input>
+      </ion-item>
+      <ion-item button (click)="handleCopy(appManager.selService.dob)" *ngIf="appManager.selService.dob">
+        <ion-label position="fixed">Date of Birth</ion-label>
+        <ion-input value="{{appManager.selService.dob | date: 'MMMM dd, yyyy'}}" readonly></ion-input>
+      </ion-item>
+      <ion-item button (click)="handleCopy(appManager.selService.phone)" *ngIf="appManager.selService.phone">
+        <ion-label position="fixed">Phone</ion-label>
+        <ion-input value="{{appManager.selService.phone}}" readonly></ion-input>
+      </ion-item>
+      <ion-item button (click)="handleCopy(appManager.selService.cell)" *ngIf="appManager.selService.cell">
+        <ion-label position="fixed">Cell</ion-label>
+        <ion-input value="{{appManager.selService.cell}}" readonly></ion-input>
+      </ion-item>
+      <ion-item button (click)="handleCopy(appManager.selService.address)" *ngIf="appManager.selService.address">
+        <ion-label position="fixed">Address</ion-label>
+        <ion-textarea value="{{appManager.selService.address}}" readonly rows="3"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <ion-button size="large" (click)="handleDelete()">DELETE</ion-button>
+
+  </div>
+</ion-content>

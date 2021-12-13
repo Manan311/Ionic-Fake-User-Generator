@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="ttlheader">
     <ion-title>
-      Blank
+      Fake User Generator
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <ion-list *ngIf="!appManager.serviceUserEmpty">
+      <ion-item class="itm" *ngFor="let serviceUser of appManager.serviceUsers"
+        lines="full"
+        button
+        (click)="handleDetail(serviceUser)">
+        <ion-thumbnail slot="start">
+          <ion-img src="{{serviceUser.picture ? serviceUser.picture : logoImage}}"></ion-img>
+        </ion-thumbnail>
+        <div> 
+          <ion-label>{{serviceUser.serviceName}}</ion-label>
+          <ion-label *ngIf="serviceUser.username">{{serviceUser.username}}</ion-label>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-label *ngIf="appManager.serviceUserEmpty">
+      No users exists, click add to generate users
+    </ion-label>
+    <ion-button size="large" [routerLink]="['/add']">ADD</ion-button>
   </div>
 </ion-content>
